@@ -1,0 +1,17 @@
+<% @title = "Home" %>
+<% @header = "Home" %>
+<h1>Hoş Geldiniz!</h1>
+<h2>Blogumda Keşfedin</h2>
+<p>Burada ilginç yazılar ve düşünceler bulacaksınız.</p>
+
+<section class="latest-posts">
+    <h2>Son Blog Yazıları</h2>
+    <% @blog_posts.each do |post| %>
+        <article>
+            <img src="<%= post['image'] %>" alt="<%= post['title'] %>">
+            <h3><a href="/blog/<%= post['id'] %>"><%= post['title'] %></a></h3>
+            <p><%= post['excerpt'] %></p>
+            <p><small>Yayın Tarihi: <%= post['date'] %></small></p>
+        </article>
+    <% end %>
+</section>

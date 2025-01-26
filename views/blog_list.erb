@@ -1,0 +1,13 @@
+<% @title = "Blog" %>
+<% @header = "Blog" %>
+
+
+ <h2> Blog Yazıları</h2>
+    <% @blog_posts.each do |post| %>
+        <article>
+            <img src="<%= post['image'] %>" alt="<%= post['title'] %>">
+            <h3><a href="/blog/<%= post['id'] %>"><%= post['title'] %></a></h3>
+            <p><%= post['excerpt'] %></p>
+            <p><small>Yayın Tarihi: <%= post['date'] %></small></p>
+        </article>
+    <% end %>
